@@ -41,9 +41,9 @@
 			<!-- Logo -->
 			<a href="panelPrincipal" class="logo">
 				<!-- mini logo for sidebar mini 50x50 pixels -->
-				<span class="logo-mini"><b>75</b>%</span>
+				<span class="logo-mini"><b>ilife</b>Admin</span>
 				<!-- logo for regular state and mobile devices -->
-				<span class="logo-lg"><b>75</b>%</span>
+				<span class="logo-lg"><b>ilife</b> Panel Admin</span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
 			<nav class="navbar navbar-static-top" role="navigation">
@@ -96,33 +96,22 @@
 				<ul class="sidebar-menu">
 					<li class="header">MENÚ PRINCIPAL</li>
 					{if $PAGE.usuario->getIdTipo() eq 1}
-					<li class="{if in_array($PAGE.modulo, array('admonUsuarios', 'configuracion'))}active{/if} treeview">
+					<li class="{if in_array($PAGE.modulo, array('admonUsuarios'))}active{/if} treeview">
 						<a href="#">
 							<span>Administración</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
 							<li {if $PAGE.modulo eq 'admonUsuarios'}class="active"{/if}><a href="admonUsuarios"><i class="fa fa-users"></i> Usuarios</a></li>
-							<li {if $PAGE.modulo eq 'configuracion'}class="active"{/if}><a href="configuracion"><i class="fa fa-server"></i> Configuración</a></li>
 						</ul>
 					</li>
 					{/if}
 					{if $PAGE.usuario->getIdTipo() eq 1}
-					<li class="{if in_array($PAGE.modulo, array('clientes', 'alimentos', 'actividades'))}active{/if} treeview">
+					<li class="{if in_array($PAGE.modulo, array('modulos'))}active{/if} treeview">
 						<a href="#">
 							<span>Catálogos</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
-							<li {if $PAGE.modulo eq 'clientes'}class="active"{/if}><a href="clientes"><i class="fa fa-male"></i> Clientes</a></li>
-							<li {if $PAGE.modulo eq 'alimentos'}class="active"{/if}><a href="alimentos"><i class="fa fa-coffee"></i> Alimentos</a></li>
-							<li {if $PAGE.modulo eq 'actividades'}class="active"{/if}><a href="actividades"><i class="fa fa-bicycle"></i> Actividades</a></li>
-						</ul>
-					</li>
-					<li class="{if in_array($PAGE.modulo, array('menuPlantilla'))}active{/if} treeview">
-						<a href="#">
-							<span>Menús</span> <i class="fa fa-angle-left pull-right"></i>
-						</a>
-						<ul class="treeview-menu">
-							<li {if $PAGE.modulo eq 'menuPlantilla'}class="active"{/if}><a href="menuPlantilla"><i class="fa fa-coffee"></i> Menú</a></li>
+							<li {if $PAGE.modulo eq 'modulos'}class="active"{/if}><a href="modulos"><i class="fa fa-briefcase"></i> Módulos</a></li>
 						</ul>
 					</li>
 					{/if}

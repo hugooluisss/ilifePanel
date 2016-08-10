@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-07-03 22:10:24
+<?php /* Smarty version Smarty-3.1.11, created on 2016-08-09 23:06:07
          compiled from "templates/plantillas/layout/login.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2867926935779d3a09b8d19-02818759%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c5b8753aeb60af718a5f9de931383e28721a5592' => 
     array (
       0 => 'templates/plantillas/layout/login.tpl',
-      1 => 1467137923,
+      1 => 1470801966,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_5779d3a0ac1a45_83550857',
   'variables' => 
   array (
     'PAGE' => 0,
     'script' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_5779d3a0ac1a45_83550857',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5779d3a0ac1a45_83550857')) {function content_5779d3a0ac1a45_83550857($_smarty_tpl) {?><!DOCTYPE html>
 <html>
@@ -76,12 +76,12 @@ dist/css/skins/_all-skins.css" />
 	<body class="hold-transition login-page">
 		<div class="login-box">
 			<div class="login-logo">
-				<a href="index.php">75<b>%</b></a>
+				<a href="index.php">Panel<b>Admin</b></a>
 			</div><!-- /.login-logo -->
 		<div class="login-box-body">
 			<p class="login-box-msg">
-					<!--<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
-img/logo.jpg" class="img-rounded"/>-->
+					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+img/logo.png" class="img-rounded"/>
 					<br />
 					Identificate para iniciar sesión
 				</p>

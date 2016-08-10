@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-08-04 22:14:24
+<?php /* Smarty version Smarty-3.1.11, created on 2016-08-09 23:41:06
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2892515405779d4757b0160-13665111%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1470366862,
+      1 => 1470804065,
       2 => 'file',
     ),
   ),
@@ -84,9 +84,9 @@ plugins/upload/css/jquery.fileupload.css">
 			<!-- Logo -->
 			<a href="panelPrincipal" class="logo">
 				<!-- mini logo for sidebar mini 50x50 pixels -->
-				<span class="logo-mini"><b>75</b>%</span>
+				<span class="logo-mini"><b>ilife</b>Admin</span>
 				<!-- logo for regular state and mobile devices -->
-				<span class="logo-lg"><b>75</b>%</span>
+				<span class="logo-lg"><b>ilife</b> Panel Admin</span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
 			<nav class="navbar navbar-static-top" role="navigation">
@@ -142,33 +142,22 @@ plugins/upload/css/jquery.fileupload.css">
 				<ul class="sidebar-menu">
 					<li class="header">MENÚ PRINCIPAL</li>
 					<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getIdTipo()==1){?>
-					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('admonUsuarios','configuracion'))){?>active<?php }?> treeview">
+					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('admonUsuarios'))){?>active<?php }?> treeview">
 						<a href="#">
 							<span>Administración</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='admonUsuarios'){?>class="active"<?php }?>><a href="admonUsuarios"><i class="fa fa-users"></i> Usuarios</a></li>
-							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='configuracion'){?>class="active"<?php }?>><a href="configuracion"><i class="fa fa-server"></i> Configuración</a></li>
 						</ul>
 					</li>
 					<?php }?>
 					<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getIdTipo()==1){?>
-					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('clientes','alimentos','actividades'))){?>active<?php }?> treeview">
+					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('modulos'))){?>active<?php }?> treeview">
 						<a href="#">
 							<span>Catálogos</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
-							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='clientes'){?>class="active"<?php }?>><a href="clientes"><i class="fa fa-male"></i> Clientes</a></li>
-							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='alimentos'){?>class="active"<?php }?>><a href="alimentos"><i class="fa fa-coffee"></i> Alimentos</a></li>
-							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='actividades'){?>class="active"<?php }?>><a href="actividades"><i class="fa fa-bicycle"></i> Actividades</a></li>
-						</ul>
-					</li>
-					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('menuPlantilla'))){?>active<?php }?> treeview">
-						<a href="#">
-							<span>Menús</span> <i class="fa fa-angle-left pull-right"></i>
-						</a>
-						<ul class="treeview-menu">
-							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='menuPlantilla'){?>class="active"<?php }?>><a href="menuPlantilla"><i class="fa fa-coffee"></i> Menú</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='modulos'){?>class="active"<?php }?>><a href="modulos"><i class="fa fa-briefcase"></i> Módulos</a></li>
 						</ul>
 					</li>
 					<?php }?>

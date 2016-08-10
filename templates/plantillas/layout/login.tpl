@@ -35,11 +35,11 @@
 	<body class="hold-transition login-page">
 		<div class="login-box">
 			<div class="login-logo">
-				<a href="index.php">75<b>%</b></a>
+				<a href="index.php">Panel<b>Admin</b></a>
 			</div><!-- /.login-logo -->
 		<div class="login-box-body">
 			<p class="login-box-msg">
-					<!--<img src="{$PAGE.ruta}img/logo.jpg" class="img-rounded"/>-->
+					<img src="{$PAGE.ruta}img/logo.png" class="img-rounded"/>
 					<br />
 					Identificate para iniciar sesión
 				</p>

@@ -88,5 +88,28 @@ $conf['panelPrincipal'] = array(
 	'seguridad' => true,
 	'js' => array(),
 	'capa' => LAYOUT_DEFECTO);
+
+#Módulos
+$conf['modulos'] = array(
+	'controlador' => 'modulos.php',
+	'vista' => 'modulos/panel.tpl',
+	'descripcion' => 'Administración de modulos',
+	'seguridad' => true,
+	'js' => array('modulo.class.js'),
+	'jsTemplate' => array('modulos.js'),
+	'capa' => LAYOUT_DEFECTO);
+
+$conf['listaModulos'] = array(
+	'controlador' => 'modulos.php',
+	'vista' => 'modulos/lista.tpl',
+	'descripcion' => 'Lista de modulos',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 	
+$conf['cmodulos'] = array(
+	'controlador' => 'modulos.php',
+	'descripcion' => 'Controlador de modulos',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+
 ?>
