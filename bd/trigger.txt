@@ -1,0 +1,27 @@
+DELIMITER //
+create TRIGGER carrito_BINS before INSERT ON carrito
+FOR EACH ROW
+BEGIN
+	declare customer bigint unsigned;
+	select count(idCliente) into customer from cliente where email = new.t_email;
+	if (customer <= 0) then
+		insert into cliente set 
+			cliente.nombre = new.t_nombre,
+			cliente.app = new.t_apellido_p,
+			cliente.apm = new.t_apellido_m,
+			cliente.nacimiento = new.t_fecha_nacimiento,
+			cliente.email = new.t_email,
+			cliente.telefono = new.t_telefono;
+
+		SELECT LAST_INSERT_ID() INTO customer;
+	else
+		select idCliente into customer from cliente where email = new.t_email limit 1;
+	end if;
+insert into poliza set
+	poliza.beneficiarios = new.beneficiarios,
+	poliza.idModulo = new.modulo,
+	poliza.idCliente = customer,
+	poliza.creada = now();
+END;//
+ 
+DELIMITER ;

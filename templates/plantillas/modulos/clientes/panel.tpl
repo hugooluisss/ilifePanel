@@ -1,25 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-08-10 14:00:52
-         compiled from "templates/plantillas/modulos/clientes/panel.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:57486810857ab79e45f7f40-46654283%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
-$_valid = $_smarty_tpl->decodeProperties(array (
-  'file_dependency' => 
-  array (
-    '2b0420e588c8f140981aaefc6982f8fda3e4f189' => 
-    array (
-      0 => 'templates/plantillas/modulos/clientes/panel.tpl',
-      1 => 1470855596,
-      2 => 'file',
-    ),
-  ),
-  'nocache_hash' => '57486810857ab79e45f7f40-46654283',
-  'function' => 
-  array (
-  ),
-  'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_57ab79e463f6f7_19502028',
-),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57ab79e463f6f7_19502028')) {function content_57ab79e463f6f7_19502028($_smarty_tpl) {?><div class="row">
+<div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">Administración de clientes</h1>
 	</div>
@@ -86,4 +65,4 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</div>
 		</form>
 	</div>
-</div><?php }} ?>
+</div>
