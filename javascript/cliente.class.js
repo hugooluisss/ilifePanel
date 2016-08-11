@@ -23,6 +23,8 @@ TCliente = function(){
 	};
 	
 	this.del = function(id, fn){
+		if (fn.before !== undefined) fn.before();
+		
 		$.post('cclientes', {
 			"id": id,
 			"action": "del"
@@ -34,4 +36,20 @@ TCliente = function(){
 			}
 		}, "json");
 	};
+	
+	this.getPolizas = function(cliente, fn){
+		if (fn.before !== undefined) fn.before();
+		
+		$.post('listaClientePolizas', {
+			"cliente": cliente,
+			"json": true,
+			"action": "del"
+		}, function(data){
+			if (fn.after != undefined)
+				fn.after(data);
+			if (data.band == 'false'){
+				console.log("Ocurrió un al obtener la lista de pólizas");
+			}
+		}, "json");
+	}
 };

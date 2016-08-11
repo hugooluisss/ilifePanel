@@ -141,4 +141,34 @@ $conf['listaClientePolizas'] = array(
 	'descripcion' => 'Lista de polizas de un cliente',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+#Pagos
+$conf['pagos'] = array(
+	'controlador' => 'pagos.php',
+	'vista' => 'pagos/panel.tpl',
+	'descripcion' => 'Administración de pagos',
+	'seguridad' => true,
+	'js' => array('pago.class.js', 'cliente.class.js'),
+	'jsTemplate' => array('pagos.js'),
+	'capa' => LAYOUT_DEFECTO);
+
+$conf['listaPagos'] = array(
+	'controlador' => 'pagos.php',
+	'vista' => 'pagos/lista.tpl',
+	'descripcion' => 'Lista de pagos',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+	
+$conf['cpagos'] = array(
+	'controlador' => 'pagos.php',
+	'descripcion' => 'Controlador de pagos',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+	
+$conf['listaClientesPagos'] = array(
+	'controlador' => 'clientes.php',
+	'vista' => 'clientes/lista.tpl',
+	'descripcion' => 'Lista de clientes',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 ?>

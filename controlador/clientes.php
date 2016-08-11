@@ -15,7 +15,7 @@ switch($objModulo->getId()){
 	break;
 	case 'listaClientePolizas':
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("select a.*, b.nombre as modulo from poliza a join modulo b using(idModulo) where idCliente = ".$_POST['cliente']);
+		$rs = $db->Execute("select a.*, b.nombre as modulo, b.importe from poliza a join modulo b using(idModulo) where idCliente = ".$_POST['cliente']);
 		$datos = array();
 		while(!$rs->EOF){
 			$rs->fields['json'] = json_encode($rs->fields);
@@ -24,6 +24,7 @@ switch($objModulo->getId()){
 		}
 		
 		$smarty->assign("lista", $datos);
+		$smarty->assign("json", $datos);
 	break;
 	case 'cclientes':
 		switch($objModulo->getAction()){

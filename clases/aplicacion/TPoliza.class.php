@@ -40,7 +40,7 @@ class TPoliza{
 		if ($id == '') return false;
 		
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("select * from pago where idPago = ".$id);
+		$rs = $db->Execute("select * from poliza where idPoliza = ".$id);
 		
 		foreach($rs->fields as $field => $val){
 			switch($field){
@@ -67,7 +67,7 @@ class TPoliza{
 	*/
 	
 	public function getId(){
-		return $this->idPago;
+		return $this->idPoliza;
 	}
 	
 	/**
@@ -80,7 +80,7 @@ class TPoliza{
 	*/
 	
 	public function setFecha($val = ""){
-		$this->fecha = $val == ''?date("Y-m-d H:i:s");
+		$this->fecha = $val == ''?date("Y-m-d H:i:s"):$this->fecha;
 		return true;
 	}
 	
@@ -147,6 +147,52 @@ class TPoliza{
 	
 	public function getSiguientePago(){
 		return $this->siguientepago;
+	}
+	
+	/**
+	* Establece la fecha del último pago
+	*
+	* @autor Hugo
+	* @access public
+	* @param date $val Fecha del próximo pago
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setUltimoPago($val = ''){
+		if ($val == '') return false;
+		if ($this->getId() == '') return false;
+		
+		$actual = new DateTime($this->getSiguientePago());
+		$nuevo = new DateTime($val);
+		
+		if($nuevo->diff($actual) >= 0){
+			$this->ultimopago = $nuevo->format("Y-m-d");
+			$nuevo->modify("+1 months");
+			$this->siguientepago = $nuevo->format("Y-m-d");
+		}else{
+			$nuevo = new DateTime();
+			
+			$this->ultimopago = $nuevo->format("Y-m-d");
+			$nuevo->modify("+1 months");
+			$this->siguientepago = $nuevo->format("Y-m-d");
+		}
+		
+		$db = TBase::conectaDB();
+		$rs = $db->Execute("update poliza set ultimopago = '".$this->ultimopago." ".date("H:i:s")."', siguientepago = '".$this->siguientepago."' where idPoliza = ".$this->getId());
+		
+		return true;
+	}
+	
+	/**
+	* Retorna la fecha en la que se debe de hacer el siguiente pago
+	*
+	* @autor Hugo
+	* @access public
+	* @return float Importe
+	*/
+	
+	public function getUltimoPago(){
+		return $this->ultimopago;
 	}
 	
 	/**

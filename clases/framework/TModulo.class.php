@@ -107,7 +107,8 @@ class TModulo{
 	
 	public function getRutaCapa(){
 		if (isset($this->capa))
-			if ($_POST['movil'] == 1 and $_POST['json'] == true)
+			#if ($_POST['movil'] == 1 and $_POST['json'] == true)
+			if ($_POST['json'] == true)
 				return LAYOUT_JSON;
 			else
 				return $this->capa;

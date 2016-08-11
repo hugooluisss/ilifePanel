@@ -39,7 +39,7 @@ $(document).ready(function(){
 							$("#frmAdd").get(0).reset();
 							$('#panelTabs a[href="#listas"]').tab('show');
 						}else{
-							alert("Upps... No se pudo borrar el módulo");
+							alert("Upps... No se pudo guardar el módulo");
 						}
 					}
 				}

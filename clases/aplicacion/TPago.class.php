@@ -8,9 +8,9 @@
 
 class TPago{
 	private $idPago;
-	public $idPoliza;
+	public $poliza;
 	private $fecha;
-	private $monto;
+	private $importe;
 	
 	/**
 	* Constructor de la clase
@@ -20,6 +20,7 @@ class TPago{
 	* @param int $id identificador del objeto
 	*/
 	public function TPago($id = ''){
+		$this->poliza = new TPoliza;
 		$this->setId($id);		
 		return true;
 	}
@@ -39,8 +40,15 @@ class TPago{
 		$db = TBase::conectaDB();
 		$rs = $db->Execute("select * from pago where idPago = ".$id);
 		
-		foreach($rs->fields as $field => $val)
-			$this->$field = $val;
+		foreach($rs->fields as $field => $val){
+			switch($field){
+				case 'idPoliza':
+					$this->poliza = new TPoliza($val);
+				break;
+				default:
+					$this->$field = $val;
+			}
+		}
 		
 		return true;
 	}
@@ -67,7 +75,7 @@ class TPago{
 	*/
 	
 	public function setFecha($val = ""){
-		$this->fecha = $val == ''?date("Y-m-d H:i:s");
+		$this->fecha = $val == ''?date("Y-m-d H:i:s"):$val;
 		return true;
 	}
 	
@@ -106,6 +114,9 @@ class TPago{
 	*/
 	
 	public function getImporte(){
+		if ($this->importe == '')
+			return $this->poliza->modulo->getImporte();
+			
 		return $this->importe;
 	}
 	
@@ -118,23 +129,34 @@ class TPago{
 	*/
 	
 	public function guardar(){
+		if ($this->poliza->getId() == '') return false;
 		$db = TBase::conectaDB();
 		
 		if ($this->getId() == ''){
-			$rs = $db->Execute("INSERT INTO modulo(nombre) VALUES('".$this->getNombre()."');");
+			$rs = $db->Execute("INSERT INTO pago(idPoliza, fecha) VALUES(".$this->poliza->getId().", now());");
 			if (!$rs) return false;
 				
-			$this->idModulo = $db->Insert_ID();
+			$this->idPago = $db->Insert_ID();
 		}		
 		
 		if ($this->getId() == '')
 			return false;
 			
-		$rs = $db->Execute("UPDATE modulo
+		$rs = $db->Execute("UPDATE pago
 			SET
-				nombre = '".$this->getNombre()."',
+				fecha = '".$this->getFecha()."',
 				importe = ".$this->getImporte()."
-			WHERE idModulo = ".$this->getId());
+			WHERE idPago = ".$this->idPago);
+			
+		if ($rs){
+			if($this->poliza->setUltimoPago($this->getFecha())){
+				$rs = $db->Execute("update pago set inicio = '".$this->poliza->getUltimoPago()."', fin = '".$this->poliza->getSiguientePago()."' where idPago = ".$this->getId());
+				
+				return $rs?true:false;
+			}
+			
+			return false;
+		}
 			
 		return $rs?true:false;
 	}
@@ -151,7 +173,7 @@ class TPago{
 		if ($this->getId() == '') return false;
 		
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("delete from modulo where idModulo = ".$this->getId());
+		$rs = $db->Execute("delete from pago where idPago = ".$this->getId());
 		
 		return $rs?true:false;
 	}

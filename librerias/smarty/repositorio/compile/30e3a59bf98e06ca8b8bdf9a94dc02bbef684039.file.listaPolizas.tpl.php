@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-08-10 23:10:02
+<?php /* Smarty version Smarty-3.1.11, created on 2016-08-11 10:52:44
          compiled from "templates/plantillas/modulos/clientes/listaPolizas.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:41894986757abf963a59494-47486325%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30e3a59bf98e06ca8b8bdf9a94dc02bbef684039' => 
     array (
       0 => 'templates/plantillas/modulos/clientes/listaPolizas.tpl',
-      1 => 1470888599,
+      1 => 1470923648,
       2 => 'file',
     ),
   ),
