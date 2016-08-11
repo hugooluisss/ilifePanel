@@ -21,7 +21,8 @@ insert into poliza set
 	poliza.beneficiarios = new.beneficiarios,
 	poliza.idModulo = new.modulo,
 	poliza.idCliente = customer,
-	poliza.creada = now();
+	poliza.creada = now(),
+	poliza.siguientepago = now();
 END;//
  
 DELIMITER ;

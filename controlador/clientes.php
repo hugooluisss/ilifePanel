@@ -13,6 +13,18 @@ switch($objModulo->getId()){
 		
 		$smarty->assign("lista", $datos);
 	break;
+	case 'listaClientePolizas':
+		$db = TBase::conectaDB();
+		$rs = $db->Execute("select a.*, b.nombre as modulo from poliza a join modulo b using(idModulo) where idCliente = ".$_POST['cliente']);
+		$datos = array();
+		while(!$rs->EOF){
+			$rs->fields['json'] = json_encode($rs->fields);
+			array_push($datos, $rs->fields);
+			$rs->moveNext();
+		}
+		
+		$smarty->assign("lista", $datos);
+	break;
 	case 'cclientes':
 		switch($objModulo->getAction()){
 			case 'add':

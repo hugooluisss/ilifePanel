@@ -263,16 +263,15 @@ class TCliente{
 		if ($this->getId() == '')
 			return false;
 			
-		$rs = $db->Execute("UPDATE modulo
+		$rs = $db->Execute("UPDATE cliente
 			SET
 				nombre = '".$this->getNombre()."',
 				app = '".$this->getApp()."',
 				apm = '".$this->getApm()."',
 				nacimiento = '".$this->getNacimiento()."',
 				email = '".$this->getEmail()."',
-				telefono = '".$this->getTelefono()."',
-				beneficiarios = '".$this->getBaneficiarios()."'
-			WHERE idModulo = ".$this->getId());
+				telefono = '".$this->getTelefono()."'
+			WHERE idCliente = ".$this->getId());
 			
 		return $rs?true:false;
 	}

@@ -134,4 +134,11 @@ $conf['cclientes'] = array(
 	'descripcion' => 'Controlador de clientes',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+$conf['listaClientePolizas'] = array(
+	'controlador' => 'clientes.php',
+	'vista' => 'clientes/listaPolizas.tpl',
+	'descripcion' => 'Lista de polizas de un cliente',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 ?>

@@ -20,6 +20,7 @@
 						<td>{$row.apm}</td>
 						<td>{$row.email}</td>
 						<td style="text-align: right">
+							<button type="button" class="btn btn-primary" action="polizas" title="Polizas" datos='{$row.json}'><i class="fa fa-book"></i></button>
 							<button type="button" class="btn btn-success" action="modificar" title="Modificar" datos='{$row.json}'><i class="fa fa-pencil"></i></button>
 							<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" identificador="{$row.idCliente}"><i class="fa fa-times"></i></button>
 						</td>

@@ -28,19 +28,19 @@
 					</div>
 					<div class="form-group">
 						<label for="txtApp" class="col-lg-2">Apellido paterno</label>
-						<div class="col-lg-6">
+						<div class="col-lg-4">
 							<input class="form-control" id="txtApp" name="txtApp">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="txtApm" class="col-lg-2">Apellido materno</label>
-						<div class="col-lg-6">
+						<div class="col-lg-4">
 							<input class="form-control" id="txtApm" name="txtApm">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="txtNacimiento" class="col-lg-2">Fecha de nacimiento</label>
-						<div class="col-lg-3">
+						<div class="col-lg-2">
 							<input class="form-control" id="txtNacimiento" name="txtNacimiento" type="text">
 						</div>
 					</div>
@@ -52,7 +52,7 @@
 					</div>
 					<div class="form-group">
 						<label for="txtTelefono" class="col-lg-2">Teléfono</label>
-						<div class="col-lg-3">
+						<div class="col-lg-2">
 							<input class="form-control" id="txtTelefono" name="txtTelefono" type="text">
 						</div>
 					</div>
@@ -64,5 +64,23 @@
 				</div>
 			</div>
 		</form>
+	</div>
+</div>
+
+
+<div class="modal fade" id="winPolizas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Polizas</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row" id="dvPolizas"></div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+			</div>
+		</div>
 	</div>
 </div>
