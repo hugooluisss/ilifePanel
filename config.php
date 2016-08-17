@@ -171,4 +171,10 @@ $conf['listaClientesPagos'] = array(
 	'descripcion' => 'Lista de clientes',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+$conf['cwebhooks'] = array(
+	'controlador' => 'pagos.php',
+	'descripcion' => 'Controlador de confirmación de pagos con openpay',
+	'seguridad' => false,
+	'capa' => LAYOUT_AJAX);
 ?>

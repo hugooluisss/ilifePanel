@@ -162,8 +162,8 @@ class TPoliza{
 		if ($val == '') return false;
 		if ($this->getId() == '') return false;
 		
-		$actual = new DateTime($this->getSiguientePago());
-		$nuevo = new DateTime($val);
+		$actual = new DateTime($this->getSiguientePago()); #17-09
+		$nuevo = new DateTime($val); #17-08
 		
 		if($nuevo->diff($actual) >= 0){
 			$this->ultimopago = $nuevo->format("Y-m-d");
@@ -222,7 +222,7 @@ class TPoliza{
 			SET
 				idModulo = '".$this->modulo->getId()."',
 				cliente = ".$this->getImporte()."
-				beneficiarios = '',
+				beneficiarios = '".$this->getBeneficiarios()."'
 				
 			WHERE idPoliza = ".$this->getId());
 			

@@ -1,0 +1,13 @@
+2016-08-13 06:52:47 ---- Array
+(
+    [mi ejemplo] => hola
+)
+
+2016-08-13 06:53:20 ---- Array
+(
+)
+Array
+(
+    [mi ejemplo] => 1
+)
+

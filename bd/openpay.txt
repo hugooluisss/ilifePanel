@@ -1,0 +1,29 @@
+curl https://sandbox-api.openpay.mx/v1/m5n70fpkdhv8qolrpvp7/webhooks -u sk_1598c7df080e42a3ac27622ddba0cbfb -H "Content-type: application/json" -X POST -d '{
+    "url" : "http://panelAdmin.ilifeprotection.mx/cwebhooks",
+    "event_types" : [
+      "charge.succeeded",
+      "charge.refunded", 
+      "charge.failed", 
+      "charge.cancelled", 
+      "charge.created", 
+      "charge.rescored.to.decline",
+      "subscription.charge.failed", 
+      "payout.created", 
+      "payout.succeeded", 
+      "payout.failed", 
+      "transfer.succeeded", 
+      "fee.succeeded", 
+      "fee.refund.succeeded", 
+      "spei.received", 
+      "chargeback.created", 
+      "chargeback.rejected", 
+      "chargeback.accepted", 
+      "order.created", 
+      "order.activated", 
+      "order.payment.received", 
+      "order.completed", 
+      "order.expired", 
+      "order.cancelled", 
+      "order.payment.cancelled"
+    ]
+}'
