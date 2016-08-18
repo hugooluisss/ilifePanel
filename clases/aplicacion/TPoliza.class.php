@@ -209,7 +209,7 @@ class TPoliza{
 		$db = TBase::conectaDB();
 		
 		if ($this->getId() == ''){
-			$rs = $db->Execute("INSERT INTO poliza(idModulo, idCliente) VALUES(".$this->modulo->getId().", ".$this->cliente->getId().");");
+			$rs = $db->Execute("INSERT INTO poliza(idModulo, idCliente, creada) VALUES(".$this->modulo->getId().", ".$this->cliente->getId().", now());");
 			if (!$rs) return false;
 				
 			$this->idPoliza = $db->Insert_ID();

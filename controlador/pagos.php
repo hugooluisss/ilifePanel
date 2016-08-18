@@ -109,6 +109,9 @@ switch($objModulo->getId()){
 						$pago->setImporte($obj->amount);
 						
 						$pago->guardar();
+						
+						#con esto aseguro que no se pueda cambiar
+						$db->Execute("update carrito set status = 1 where id = ".$orden);
 					}
 				}
 			break;
