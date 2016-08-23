@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-08-11 17:13:32
+<?php /* Smarty version Smarty-3.1.11, created on 2016-08-18 10:57:36
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2892515405779d4757b0160-13665111%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1470940062,
+      1 => 1471535855,
       2 => 'file',
     ),
   ),
@@ -169,6 +169,16 @@ plugins/upload/css/jquery.fileupload.css">
 						<ul class="treeview-menu">
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='clientes'){?>class="active"<?php }?>><a href="clientes"><i class="fa fa-user"></i> Clientes</a></li>
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='pagos'){?>class="active"<?php }?>><a href="pagos"><i class="fa fa-money"></i> Pagos</a></li>
+						</ul>
+					</li>
+					<?php }?>
+					<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getIdTipo()==1){?>
+					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('recordatorioMail'))){?>active<?php }?> treeview">
+						<a href="#">
+							<span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
+						</a>
+						<ul class="treeview-menu">
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='recordatorioMail'){?>class="active"<?php }?>><a href="recordatorioMail"><i class="fa fa-bell"></i> Proximos a vencer</a></li>
 						</ul>
 					</li>
 					<?php }?>

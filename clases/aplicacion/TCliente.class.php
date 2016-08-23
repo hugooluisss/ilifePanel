@@ -87,6 +87,18 @@ class TCliente{
 	}
 	
 	/**
+	* Retorna el nombre completo
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getNombreCompleto(){
+		return $this->nombre. ' '.$this->app.' '.$this->apm;
+	}
+	
+	/**
 	* Establece el app
 	*
 	* @autor Hugo
@@ -214,32 +226,6 @@ class TCliente{
 	
 	public function getTelefono(){
 		return $this->telefono;
-	}
-	
-	/**
-	* Establece los beneficiarios
-	*
-	* @autor Hugo
-	* @access public
-	* @param string $val objeto json
-	* @return boolean True si se realizó sin problemas
-	*/
-	
-	public function setBeneficiarios($val = ""){
-		$this->beneficiarios = $val;
-		return true;
-	}
-	
-	/**
-	* Retorna el nombre
-	*
-	* @autor Hugo
-	* @access public
-	* @return string Texto en formato json
-	*/
-	
-	public function beneficiarios(){
-		return $this->beneficiarios;
 	}
 	
 	/**

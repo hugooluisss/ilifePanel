@@ -1,0 +1,29 @@
+<center>
+    <table>
+        <tr>
+            <td height="122" style="border-bottom:solid; border-color:#CCCCCC; border-width:1px;"><div align="center"><img src="http://ilifeprotection.mx/gui/logotipo1.jpg" width="565" height="318" /></div></td>
+        </tr>
+        <tr>
+            <td height="61">
+                <p style="font-family:Arial, Helvetica, sans-serif;">&nbsp;</p>
+                <p>
+                	<font style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; color:#0090F9;">
+                	<b>Hola [*cliente.nombre*]:</b>
+                	</font>
+                	<br />
+					
+            			<br />
+            			Gracias por seguir confiando en nosotros, el presente correo es para invitarlo a seguir utilizando nuestros servicios ya que su póliza con número de folio [*idPoliza*] está por vencer el dia [*siguientePago*]. Usted puede renovarla haciendo a través de nuestra plataforma haciendo click en el siguiente enlace
+					
+				</p>
+				<p>
+					<center><a href="https://ilifeprotection.mx/openpay/index.php?id=[*idPolizaEncriptada*]">Plataforma de pago</a></center
+				</p>
+				
+				<p>
+					<center>Muchas gracias por su preferencia</center>
+				</p>
+            </td>
+        </tr>
+    </table>
+</center>

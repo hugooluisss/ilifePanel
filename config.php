@@ -177,4 +177,26 @@ $conf['cwebhooks'] = array(
 	'descripcion' => 'Controlador de confirmación de pagos con openpay',
 	'seguridad' => false,
 	'capa' => LAYOUT_AJAX);
+	
+#Módulos
+$conf['recordatorioMail'] = array(
+	#'controlador' => 'reportes.php',
+	'vista' => 'reportes/recordatorios.tpl',
+	'descripcion' => 'Recordatorios a pagar',
+	'seguridad' => true,
+	'jsTemplate' => array('recordatorios.js'),
+	'capa' => LAYOUT_DEFECTO);
+
+$conf['listaRecordatorios'] = array(
+	'controlador' => 'reportes.php',
+	'vista' => 'reportes/listaRecordatorios.tpl',
+	'descripcion' => 'Lista de recordatorios',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+	
+$conf['creportes'] = array(
+	'controlador' => 'reportes.php',
+	'descripcion' => 'Controlador de recordatorios',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 ?>

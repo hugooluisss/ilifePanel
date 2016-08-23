@@ -22,8 +22,8 @@ class TPoliza{
 	*/
 	public function TPoliza($id = ''){
 		$this->cliente = new TCliente;
-		$this->modulo = new TModulo;
-		$this->setId($id);		
+		$this->modulo = new TMod;
+		$this->setId($id);
 		return true;
 	}
 	
@@ -48,7 +48,7 @@ class TPoliza{
 					$this->cliente = new TCliente($val);
 				break;
 				case 'idModulo':
-					$this->modulo = new TModulo($val);
+					$this->modulo = new TMod($val);
 				break;
 				default:
 					$this->$field = $val;
